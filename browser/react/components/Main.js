@@ -21,14 +21,14 @@ export default class Main extends Component {
             <Sidebar deselectAlbum={this.deselectAlbum} />
           </div>
           <div className="col-xs-10">
-          <Switch>
-            <Route path="/albums/:albumId" component={SingleAlbum} />
-            <Route exact path="/" component={StatefulAlbums} />
-            <Route exact path="/albums" render={() => <StatefulAlbums />} />
-            <Route exact path="/artists" component={AllArtists} />
-            <Route exact path="/artists/:artistId" component={SingleArtist} />
-            <Route component={NoMatch} />
-          </Switch>
+            <Switch>
+              <Route exact path="/albums/:albumId" component={SingleAlbum} />
+              <Route exact path="/" component={StatefulAlbums} />
+              <Route exact path="/albums" render={() => <StatefulAlbums />} />
+              <Route exact path="/artists" component={AllArtists} />
+              <Route path="/artists/:artistId" component={SingleArtist} />
+              <Route component={NoMatch} />
+            </Switch>
           </div>
           <Player />
         </div>
